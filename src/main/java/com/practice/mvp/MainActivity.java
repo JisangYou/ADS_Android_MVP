@@ -13,14 +13,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        setContentView(R.layout.activity_main);
+        // 해당 화면에서 정의해놓은 View,Presenter interface를 선언한다.
 
-        // 1. 뷰 생성
-        MainContract.IView mainView = new MainView(this);
+        MainContract.iView mainView = new MainView(this); // MainView클래스에서 context자원을 받아서 뷰를 생성한다.
+        MainContract.iPresenter mainPresenter = new MainPresenter();
+
+        mainPresenter.attachView(mainView);
+        mainView.setPresenter(mainPresenter);
+
+        // View는 화면에 보여주는 역할이므로, setContentView를 통해 setting한다.
+        // contet
         setContentView(mainView.getView());
-
-        // 2. 프레젠터 생성
-        MainContract.IPresenter presenter = new MainPresenter();
-        presenter.attachView(mainView);
     }
 }
