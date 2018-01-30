@@ -151,11 +151,11 @@ public class MainPresenter implements MainContract.iPresenter, OnItemClickListen
 
 ### 구현 시 참고 사항
 
-- __View__는 Presenter에 의존적이기에 Presenter 객체를 멤버변수로 가져야 함,정해진 이벤트 발생시점에 presenter 로직이 실행(위임)
+- View는 Presenter에 의존적이기에 Presenter 객체를 멤버변수로 가져야 함,정해진 이벤트 발생시점에 presenter 로직이 실행(위임)
 
-- __Presenter__는 View와 Model에 종속적이기 때문에 둘다 멤버변수를 가져야 함. 요구 사항에 맞게 View, Model 정의된 Method들을 호출해 사용
+- Presenter는 View와 Model에 종속적이기 때문에 둘다 멤버변수를 가져야 함. 요구 사항에 맞게 View, Model 정의된 Method들을 호출해 사용
 
-- __Model__은 독립적이기에, 일반적으로 만들면 됨. 
+- Model은 독립적이기에, 일반적으로 만들면 됨. 
 
 ### 출처
 
